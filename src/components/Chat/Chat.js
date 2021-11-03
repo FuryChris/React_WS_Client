@@ -19,15 +19,13 @@ const Chat = ({ location }) => {
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-    socket = io(
-      ENDPOINT /* , {
+    socket = io(ENDPOINT, {
       cors: {
         origin: 'https://ws-react.herokuapp.com/',
         credentials: true,
       },
       transports: ['websocket'],
-    } */
-    );
+    });
 
     setName(name);
     setRoom(room);
